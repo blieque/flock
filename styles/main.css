@@ -1,0 +1,74 @@
+/* typography */
+@font-face {
+    font-family:'clear sans';
+    src:url('fonts/clear-sans-regular.eot?') format('eot'),
+        url('fonts/clear-sans-regular.woff') format('woff'),
+        url('fonts/clear-sans-regular.ttf') format('truetype');
+}
+@font-face {
+    font-family:'clear sans';
+    font-weight:bold;
+    src:url('fonts/clear-sans-bold.eot?') format('eot'),
+        url('fonts/clear-sans-bold.woff') format('woff'),
+        url('fonts/clear-sans-bold.ttf') format('truetype');
+}
+
+/* main elements */
+body {
+    margin:0;
+    overflow:hidden;
+    font-size:4vh;
+    font-family:'clear sans',helvetica neue,lucida sans,sans-serif;
+    letter-spacing:.05em;
+}
+canvas {
+    transition:.2s;
+    cursor:none;
+}
+div {
+    display:none;
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,.9);
+    transition:opacity .2s .2s,display .01s .2s;
+}
+input {
+    display:block;
+    margin:45vh auto;
+    padding:0;
+    width:40vh;
+    height:6vh;
+    color:#fff;
+    background:none;
+    border:none;
+    font-size:inherit;
+    font-family:inherit;
+    letter-spacing:inherit;
+}
+input:focus {
+    outline:none;
+}
+
+input::-moz-selection {
+    background:rgba(255,255,255,.1);
+    color:#69af98;
+}
+input::selection {
+    background:rgba(255,255,255,.1);
+    color:#69af98;
+}
+
+/* data page */
+.data-page {
+    padding:2em;
+    font-size:18pt;
+}
+.data-page :first-child {
+    margin-top:0;
+}
+.data-page :last-child {
+    margin-bottom:0;
+}

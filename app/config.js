@@ -6,14 +6,14 @@ var config;
 module.exports.use = function(callback) {
 
     // read in configuration file
-    fs.readFile('config.json', 'utf8', function(errFile, data) {
+    fs.readFile('config.json', 'utf8', function(fileErr, data) {
 
         // fall-back default configuration
         config = { path: '' };
 
         // log error and use default configuration if filesystem error occurs
-        if (errFile) {
-            errorHandle(errFile);
+        if (fileErr) {
+            errorHandle(fileErr);
         } else {
 
             var configLoad;

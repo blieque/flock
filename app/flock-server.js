@@ -12,7 +12,7 @@ config.use(start);
 
 function start(configObj) {
 
-    io = new Server(3000, { path: configObj.path + '/data' });
+    io = new Server(configObj.port, { path: configObj.path + '/data' });
 
     io.on('connection', function(socket){
 

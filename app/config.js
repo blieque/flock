@@ -1,5 +1,4 @@
 var fs = require('fs');
-var exports = module.exports = {};
 var config;
 
 // provide callback for app.js to access configuration
@@ -9,7 +8,8 @@ module.exports.use = function(callback) {
     fs.readFile('config.json', 'utf8', function(fileErr, data) {
 
         // fall-back default configuration
-        config = { path: '' };
+        config = { path: '',
+                   port: 3000 };
 
         // log error and use default configuration if filesystem error occurs
         if (fileErr) {
@@ -26,7 +26,8 @@ module.exports.use = function(callback) {
             }
 
             // make extending configuration a royal pain
-            if (configLoad.path) { config.path = configLoad.path }
+            if (configLoad.path) config.path = configLoad.path;
+            if (configLoad.port) config.port = configLoad.port;
 
         }
 
